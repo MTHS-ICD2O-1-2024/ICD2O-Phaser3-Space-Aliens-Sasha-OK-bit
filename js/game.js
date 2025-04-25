@@ -17,7 +17,7 @@ const titleScene = new TitleScene()
     type: Phaser.AUTO,
     width: 1920,
     length: 1080,
-    backgroundColor:0x5f6e7a,
+    backgroundColor:0xffffff,
     scale: {
       mode: Phaser.Scale.FIT,
       //we place it in the middle of the page
