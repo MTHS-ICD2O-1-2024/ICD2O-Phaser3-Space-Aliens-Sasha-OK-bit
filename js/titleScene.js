@@ -10,7 +10,10 @@ class TitleScene extends Phaser.Scene {
     
     this.titleSceneBackgroundImage = null
     this.titleSceneText = null
-    this.titleSceneTextStyle = { font: '200px Times', fill: '# fde4b9', align: 'center' }
+    this.titleSceneTextStyle = { 
+      font: '200px Times', 
+      fill: '# fde4b9', 
+      align: 'center' }
   }
 
   init (data) {
@@ -31,6 +34,8 @@ class TitleScene extends Phaser.Scene {
   }
 
   update (time,delta) {
+  if (time > 6000)
+    this.scene.switch('menuScene')
   }
 }
 
