@@ -17,15 +17,23 @@ const gameScene = new GameScene()
  * Start Phaser Game
  */
 
-  const config = {
-    type: Phaser.AUTO,
-    width: 1920,
-    length: 1080,
-    backgroundColor:0xffffff,
-    scale: {
-      mode: Phaser.Scale.FIT,
-      //we place it in the middle of the page
-      autoCenter: Phaser.Scale.CENTER_BOTH
+const config = {
+  type: Phaser.AUTO,
+  width: 1920,
+  height: 1080,
+  physics: {
+    default: "arcade",
+    arcade: {
+      debug: false
+    }
+  },
+    
+    
+  backgroundColor: 0xffffff,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    //we place it in the middle of the page
+    autoCenter: Phaser.Scale.CENTER_BOTH
     }
   }
 
