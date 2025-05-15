@@ -24,6 +24,8 @@ class GameScene extends Phaser.Scene {
     this.load.image("starBackground", "assets/starBackground.png")
     this.load.image("ship", "assets/spaceShip.png")
     this.load.image("missile", "assets/missile.png")
+    // sound
+    this.load.audio("layer", "asset/laser1.wav")
   }
 
   create (data) {
@@ -62,6 +64,7 @@ class GameScene extends Phaser.Scene {
       this.fireMissile = true
       const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, "missile")
       this.missileGroup.add(aNewMissile)
+      this.sound.play("laser")
     }
   }
 
