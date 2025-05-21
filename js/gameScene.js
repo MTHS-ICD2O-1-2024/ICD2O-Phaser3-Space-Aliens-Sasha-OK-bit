@@ -5,6 +5,16 @@
 // This file contains the JS functions for index.html
 
 class GameScene extends Phaser.Scene {
+
+  createAlien () {
+    const alienXLocation = Math.floor(Math.random() * 1920) + 1
+    let alienXVelocity = Math.floor(Math.random() * 50) + 1
+    alienXVelocity *= Math.round(Math.random()) ? 1 : -1
+    const anAlien = this.physics.add.sprite(alienXLocation, 100, "alien")
+    anAlien.body.velocity.y = 200
+    anAlien.body.velocity.x = alienXVelocity
+    this.alienGroup.add(anAlien)
+  }
   constructor () {
     super({ key: "gameScene" })
 
@@ -24,6 +34,7 @@ class GameScene extends Phaser.Scene {
     this.load.image("starBackground", "assets/starBackground.png")
     this.load.image("ship", "assets/spaceShip.png")
     this.load.image("missile", "assets/missile.png")
+    this.load.image("alien", "assets/alien.png")
     // sound
     this.load.audio("laser", "assets/laser1.wav")
   }
@@ -35,7 +46,14 @@ class GameScene extends Phaser.Scene {
     this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, "ship")
 
     this.missileGroup = this.physics.add.group()
+
+    this.alienGroup = this.add.group()
+    this.createAlien()
   }
+
+  
+
+  
 
 
     
