@@ -49,14 +49,13 @@ class GameScene extends Phaser.Scene {
 
     this.alienGroup = this.add.group()
     this.createAlien()
-  }
 
-  
+    this.physics.add.collider(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide) {
+      alienCollide.destroy()
+      missileCollide.destroy()
+    }.bind(this))
+  }  
 
-  
-
-
-    
 
   update (time,delta) {
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
